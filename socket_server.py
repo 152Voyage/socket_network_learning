@@ -10,20 +10,7 @@ print("server start listing")
 client_socket,client_address=server.accept()
 print(f"client address is{client_address}")
 
-all_data=b""
-#第一次接收的字节数量
-data1=client_socket.recv(1024)
-print(f"第一次接收的字节数量：{len(data1)}")
-all_data+=data1
-#第二次接收的字节数量
-data2=client_socket.recv(1024)
-print(f"第二次接收的字节数量：{len(data2)}")
-all_data+=data2
-#第三次接收的字节数量
-data3=client_socket.recv(1024)
-print(f"第三次接收的字节数量：{len(data3)}")
-all_data+=data3
 
 data=client_socket.recv(1024)
-print(f"客户端说:{all_data.decode('utf-8')}")
+print(f"客户端说:{data.decode('utf-8')}")
 
